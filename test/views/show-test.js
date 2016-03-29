@@ -77,6 +77,24 @@ describe("View", () => {
         done();
       })
     });
-
   }); // end "letter=a/page=1"
+
+  describe("/letter=a/page=4", () =>{
+    var letterAPageFour = "/letter=a/page=4"
+
+    it ("should render a Letter A Page 4 page", (done)=>{
+      api
+      .get(letterAPageFour)
+      .set("Accept", "application/json")
+      .expect(200)
+      .expect('Content-Type', /html/)
+      .end(function(err, res) {
+        should.not.exist(err);
+        res.text.should.match(/Page 4/);
+        res.text.should.match(/Letter A/);
+        done();
+      })
+    });
+
+  }); // end letter=a/page=4
 }); // end of View
