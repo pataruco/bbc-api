@@ -103,6 +103,17 @@ describe('Request to BBC API', () => {
       done();
     });
   });
+  describe('a programme element', ()=>{
+
+    it("should have a field called title", (done) => {
+      api
+      .get(letterAPageOne)
+      .set("Accept", "application/json")
+      .end(function(err, res){
+        expect(res.body.atoz_programmes.elements[0]).to.have.property('title');
+        done();
+      })
+    });
         done();
       })
     });
