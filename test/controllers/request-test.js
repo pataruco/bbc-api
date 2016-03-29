@@ -103,6 +103,7 @@ describe('Request to BBC API', () => {
       done();
     });
   });
+
   describe('a programme element', ()=>{
 
     it("should have a field called title", (done) => {
@@ -114,6 +115,7 @@ describe('Request to BBC API', () => {
         done();
       })
     });
+
     it("should title value begins with 'A'", (done) => {
       api
       .get(letterAPageOne)
@@ -124,6 +126,7 @@ describe('Request to BBC API', () => {
         done();
       })
     });
+
     it("should have a field for images", (done) => {
       api
       .get(letterAPageOne)
@@ -132,6 +135,17 @@ describe('Request to BBC API', () => {
         expect(res.body.atoz_programmes.elements[0]).to.have.property('images');
         done();
       })
+    });
+
+    it("should image value have a {recipe} string ", (done) => {
+      api
+      .get(letterAPageOne)
+      .set("Accept", "application/json")
+      .end(function(err, res){
+        expect(res.body.atoz_programmes.elements[0]).to.have.property('images');
+        res.body.atoz_programmes.elements[0].images.standard.should.match(/{recipe}/);
+      });
+      done();
     });
   });
 }); //end of BBC API
