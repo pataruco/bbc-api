@@ -13,4 +13,15 @@ describe("Controller", () => {
       .expect(302, done)
     });
   });
+
+  describe("GET //letter=a/page=1", () =>{
+  var letterAPageOne = "/letter=a/page=1"
+
+    it ("should return a 200 response", (done)=>{
+      api
+      .get(letterAPageOne)
+      .set("Accept", "application/json")
+      .expect(200, done);
+    });
+  });
 });
