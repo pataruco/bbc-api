@@ -65,4 +65,16 @@ describe('Request to BBC API', () => {
         done();
       });
   });
+
+  describe('programme elements', ()=>{
+    it("should have an array of 20 programm elemments", (done) => {
+      api
+      .get(letterAPageOne)
+      .set("Accept", "application/json")
+      .end(function(err, res){
+        expect(res.body.atoz_programmes.elements).to.be.an('array');
+        expect(res.body.atoz_programmes.elements.length).to.equal(20);
+        done();
+      })
+    });
 }); //end of BBC API
