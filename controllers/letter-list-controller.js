@@ -6,4 +6,8 @@ router.get('/', (req, res) => {
   res.redirect('/letter=a/page=1');
 });
 
+router.get('/letter=:letter/page=:page', (req, res) => {
+  res.send('Hola');
+});
+
 module.exports = router;
