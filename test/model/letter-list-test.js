@@ -58,6 +58,11 @@ describe("Model LetterList", () => {
      expect(letter.character()).to.equal('a');
      done();
    });
- });// end of BBC API response
 
+   it("should get a page value", (done) => {
+     letter.init(letterAPageOneData);
+     expect(letter.page()).to.equal(1);
+     done();
+   });
+ });// end of BBC API response
 }); // end of describe LetterList
