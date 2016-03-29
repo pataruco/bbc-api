@@ -39,4 +39,11 @@ describe("Model LetterList", () => {
     done();
   });
 
+  it("should have a method to know id a 'Next Page' is need it", (done) => {
+    letter.should.have.property('nextPage');
+    letter.nextPage.should.be.a('function');
+    done();
+  });
+
+
 }); // end of describe LetterList
