@@ -2,18 +2,25 @@
 <% var character = letter.character()  %>
 <% var nextPage = letter.nextPage() %>
 <% var beforePage = letter.beforePage()%>
-<h1>Letter <%= character.toUpperCase() %></h1>
-<h2>Page <%= page %></h2>
 
-<% if (beforePage) { %>
-  <% var url = `/letter=${character}/page=${page - 1 }` %>
-  <a href="<%= url %>">Before</a>
-<% } %>
+<section class="page-information">
+  <span>Letter <strong><%= character.toUpperCase() %></strong></span>
+  <span>Page <strong><%= page %></strong></span>
+</section>
 
-<% if (nextPage) { %>
-  <% var url = `/letter=${character}/page=${page + 1 }` %>
-  <a href="<%= url %>">Next</a>
-<% } %>
+<section class="page-navigation">
+  <% if (beforePage) { %>
+    <% var url = `/letter=${character}/page=${page - 1 }` %>
+    <a href="<%= url %>">Before</a>
+  <% } %>
+
+  <% if (nextPage) { %>
+    <% var url = `/letter=${character}/page=${page + 1 }` %>
+    <a href="<%= url %>">Next</a>
+    <% } %>
+</section>
+
+
 <section class="programmes">
   <% for (var i = 0; i < letter.programmesList().length; i++) { %>
     <div class="programme">
