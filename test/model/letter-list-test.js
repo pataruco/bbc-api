@@ -64,5 +64,12 @@ describe("Model LetterList", () => {
      expect(letter.page()).to.equal(1);
      done();
    });
+   
+   it("should get a programme elements", (done) => {
+     letter.init(letterAPageOneData);
+     expect(letter.programmes()).to.be.an('array');
+     done();
+   });
+
  });// end of BBC API response
 }); // end of describe LetterList
