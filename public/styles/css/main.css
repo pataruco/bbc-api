@@ -68,9 +68,10 @@ main {
   .page-navigation span:last-child {
     margin-right: 1%; }
 .page-navigation a {
-  width: 10%;
+
   height: auto;
-  padding: .5rem;
+  padding: 1rem;
+  min-width: 14%;
   text-align: center;
   display: inline-block;
   color: white;
