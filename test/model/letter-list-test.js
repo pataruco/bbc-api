@@ -52,5 +52,12 @@ describe("Model LetterList", () => {
     done();
   });
 
+  describe("when is parsed with BBC API response", () => {
+    it("should get a character value", (done) => {
+     letter.init(letterAPageOneData);
+     expect(letter.character()).to.equal('a');
+     done();
+   });
+ });// end of BBC API response
 
 }); // end of describe LetterList
