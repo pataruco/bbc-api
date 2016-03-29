@@ -14,9 +14,14 @@ html, body {
   height: auto;
   font-size: 16px;
   background-color: #252525;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  color: white; }
 
 @media screen and (min-width: 768px) {
+  header {
+    width: 90%;
+    margin: 0 auto; }
+
   nav ul {
     padding: 0; }
   nav li {
@@ -37,6 +42,29 @@ html, body {
     color: white;
     background-color: #333333; }
     nav a:hover, nav a:focus {
+      color: #f54997; }
+
+  main {
+    width: 90%;
+    margin: 0 auto; }
+
+  .page-information {
+    clear: both;
+    font-size: 3rem;
+    color: #f54997;
+    font-weight: 200; }
+    .page-information strong {
+      color: white; }
+
+  .page-navigation a {
+    width: 7.1%;
+    height: auto;
+    padding: .5rem;
+    text-align: center;
+    display: inline-block;
+    color: white;
+    background-color: #333333; }
+    .page-navigation a:hover, .page-navigation a:focus {
       color: #f54997; } }
 .clearfix:before,
 .clearfix:after {
