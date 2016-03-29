@@ -80,7 +80,7 @@ describe("Model LetterList", () => {
      done();
    });
 
-   it("should get a programme elements array length of 20 when Letter A page 4", (done) => {
+   it("should get a programme elements array length less of  20 when Letter A page 4", (done) => {
      letter.init(letterAPageFourData);
      expect(letter.programmes()).to.be.an('array');
      assert.isBelow(letter.programmes().length, 20, 'is strictly less than 20');
