@@ -18,8 +18,8 @@ describe("View", () => {
       .expect('Content-Type', /html/)
       .end(function(err, res) {
         should.not.exist(err);
-        res.text.should.match(/Page 1/);
-        res.text.should.match(/Letter A/);
+        res.text.should.match(/Page <strong>1/);
+        res.text.should.match(/Letter <strong>A/);
         done();
       });
     });
@@ -32,8 +32,8 @@ describe("View", () => {
       .expect('Content-Type', /html/)
       .end(function(err, res) {
         should.not.exist(err);
-        res.text.should.not.match(/Page 2/);
-        res.text.should.match(/Letter A/);
+        res.text.should.not.match(/Page <strong>2/);
+        res.text.should.match(/Letter <strong>A/);
         done();
       });
     });
@@ -46,8 +46,8 @@ describe("View", () => {
       .expect('Content-Type', /html/)
       .end(function(err, res) {
         should.not.exist(err);
-        res.text.should.match(/Page 1/);
-        res.text.should.not.match(/Letter B/);
+        res.text.should.match(/Page <strong>1/);
+        res.text.should.not.match(/Letter <strong>B/);
         done();
       });
     });
@@ -90,8 +90,8 @@ describe("View", () => {
       .expect('Content-Type', /html/)
       .end(function(err, res) {
         should.not.exist(err);
-        res.text.should.match(/Page 4/);
-        res.text.should.match(/Letter A/);
+        res.text.should.match(/Page <strong>4/);
+        res.text.should.match(/Letter <strong>A/);
         done();
       })
     });
