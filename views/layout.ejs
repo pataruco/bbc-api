@@ -11,12 +11,35 @@
   </head>
   <body>
   <header>
+    <img role="img" class="js-svg" src="http://static.bbci.co.uk/tviplayer/1.101.2/img/navigation/iplayer_pink.svg" alt="BBC iPlayer" width="111" height="36" data-fallback="http://static.bbci.co.uk/tviplayer/1.101.2/img/navigation/iplayer_pink.png">
+    <nav>
+      <ul>
+      <% var navChar = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,0-9".split(","); %>
+
+        <% for (var i = 0; i < navChar.length; i++) {  %>
+          <% var url = `/letter=${navChar[i]}/page=1` %>
+          <% var letter =  navChar[i] %>
+          <li><a href="<%= url %>"><%= letter.toUpperCase() %></a></li>
+        <% }; %>
+      </ul>
+    </nav>
   </header>
   <main>
     <%- body %>
 
   </main>
   <footer>
+    <nav>
+      <ul>
+      <% var navChar = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,0-9".split(","); %>
+
+        <% for (var i = 0; i < navChar.length; i++) {  %>
+          <% var url = `/letter=${navChar[i]}/page=1` %>
+          <% var letter =  navChar[i] %>
+          <li><a href="<%= url %>"><%= letter.toUpperCase() %></a></li>
+        <% }; %>
+      </ul>
+    </nav>
   </footer>
   </body>
 </html>
