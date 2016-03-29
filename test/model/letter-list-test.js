@@ -86,6 +86,7 @@ describe("Model LetterList", () => {
      assert.isBelow(letter.programmes().length, 20, 'is strictly less than 20');
      done();
    });
+
    it("should return an array of programmes titles and image URL's", (done) => {
      letter.init(letterAPageOneData);
      expect(letter.programmesList()).to.be.an('array');
@@ -96,6 +97,12 @@ describe("Model LetterList", () => {
      letter.init(letterAPageOneData);
      letter.programmesList()[0].should.have.property('title');
      letter.programmesList()[0].should.have.property('image');
+     done();
+   });
+
+   it("should change the image URL string", (done) => {
+     letter.init(letterAPageOneData);
+     letter.programmesList()[0].image.should.match(/560x315/);
      done();
    });
 
