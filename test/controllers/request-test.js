@@ -114,6 +114,13 @@ describe('Request to BBC API', () => {
         done();
       })
     });
+    it("should title value begins with 'A'", (done) => {
+      api
+      .get(letterAPageOne)
+      .set("Accept", "application/json")
+      .end(function(err, res){
+        expect(res.body.atoz_programmes.elements[0]).to.have.property('title');
+        expect(res.body.atoz_programmes.elements[0].title[0]).to.equal('A');
         done();
       })
     });
