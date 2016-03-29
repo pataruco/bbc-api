@@ -51,19 +51,32 @@ describe("View", () => {
         done();
       });
     });
-    
-    it ("should render a next page link", (done)=>{
-          api
-          .get(letterAPageOne)
-          .set("Accept", "application/json")
-          .expect(200)
-          .expect('Content-Type', /html/)
-          .end(function(err, res) {
-            should.not.exist(err);
-            res.text.should.match(/Next/);
-            done();
-          })
-        });
 
-  });
-});
+    it ("should render a next page link", (done)=>{
+      api
+      .get(letterAPageOne)
+      .set("Accept", "application/json")
+      .expect(200)
+      .expect('Content-Type', /html/)
+      .end(function(err, res) {
+        should.not.exist(err);
+        res.text.should.match(/Next/);
+        done();
+      })
+    });
+
+    it ("should not render a before page link", (done)=>{
+      api
+      .get(letterAPageOne)
+      .set("Accept", "application/json")
+      .expect(200)
+      .expect('Content-Type', /html/)
+      .end(function(err, res) {
+        should.not.exist(err);
+        res.text.should.not.match(/Before/);
+        done();
+      })
+    });
+
+  }); // end "letter=a/page=1"
+}); // end of View
