@@ -20,6 +20,16 @@ describe('Request to BBC API', () => {
       .end(function(err, res) {
         expect(res.body).to.be.an('object');
         done();
-      })
+      });
+  });
+
+  it("should return an object that have a field called character", (done) => {
+    api
+      .get(letterAPageOne)
+      .set("Accept", "application/json")
+      .end(function(err, res){
+        expect(res.body.atoz_programmes).to.have.property('character');
+        done();
+      });
   });
 }); //end of BBC API
