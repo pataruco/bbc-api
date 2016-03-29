@@ -72,7 +72,7 @@ describe("View", () => {
       .expect('Content-Type', /html/)
       .end(function(err, res) {
         should.not.exist(err);
-        res.text.should.not.match(/Before/);
+        res.text.should.not.match(/Previous/);
         done();
       })
     });
@@ -116,7 +116,7 @@ describe("View", () => {
       .expect('Content-Type', /html/)
       .end(function(err, res) {
         should.not.exist(err);
-        res.text.should.match(/Before/);
+        res.text.should.match(/Previous/);
         done();
       });
     });
@@ -134,7 +134,7 @@ describe("View", () => {
       });
     });
   }); // end letter=a/page=4
-  
+
   describe("Nav Menu", () => {
   var letterAPageFour = "/letter=a/page=4"
 
