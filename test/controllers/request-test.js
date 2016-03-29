@@ -12,4 +12,14 @@ describe('Request to BBC API', () => {
       .set("Accept", "application/json")
       .expect(200, done);
   });
+
+  it("should return an object", (done) => {
+    api
+      .get(letterAPageOne)
+      .set("Accept", "application/json")
+      .end(function(err, res) {
+        expect(res.body).to.be.an('object');
+        done();
+      })
+  });
 }); //end of BBC API
