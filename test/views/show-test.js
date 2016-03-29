@@ -135,4 +135,20 @@ describe("View", () => {
       });
     });
   }); // end letter=a/page=4
+  describe("Nav Menu", () => {
+  var letterAPageFour = "/letter=a/page=4"
+
+    it("should have a <nav> tag", function (done) {
+      api
+      .get(letterAPageFour)
+      .set("Accept", "application/json")
+      .expect(200)
+      .expect('Content-Type', /html/)
+      .end(function(err, res) {
+        should.not.exist(err);
+        res.text.should.match(/<nav>/);
+        done();
+      })
+    });
+  });
 }); // end of View
