@@ -96,5 +96,18 @@ describe("View", () => {
       })
     });
 
+    it ("should not render a next page link", (done)=>{
+      api
+      .get(letterAPageFour)
+      .set("Accept", "application/json")
+      .expect(200)
+      .expect('Content-Type', /html/)
+      .end(function(err, res) {
+        should.not.exist(err);
+        res.text.should.not.match(/Next/);
+        done();
+      })
+    });
+
   }); // end letter=a/page=4
 }); // end of View
