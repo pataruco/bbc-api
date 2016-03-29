@@ -116,7 +116,7 @@ describe('Request to BBC API', () => {
       })
     });
 
-    it("should title value begins with 'A'", (done) => {
+    it("should title value starts with 'A' when letter 'a' is requested", (done) => {
       api
       .get(letterAPageOne)
       .set("Accept", "application/json")
