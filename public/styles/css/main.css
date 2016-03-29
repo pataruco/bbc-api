@@ -22,16 +22,22 @@ html, body {
     width: 90%;
     margin: 0 auto; }
 
+  nav h1 {
+    color: #f54997;
+    font-weight: 100; }
   nav ul {
-    padding: 0; }
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end; }
   nav li {
     list-style: none;
     height: auto;
     width: 7.1%;
     text-align: center;
-    float: left;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid transparent; }
+    margin: .01%;
+    border: .2rem solid transparent; }
     nav li:last-child {
       width: 14.2%; }
   nav a {
@@ -50,9 +56,10 @@ html, body {
 
   .page-information {
     clear: both;
-    font-size: 3rem;
+    font-size: 2rem;
     color: #f54997;
-    font-weight: 200; }
+    font-weight: 200;
+    margin-bottom: 1em; }
     .page-information strong {
       color: white; }
 
