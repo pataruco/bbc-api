@@ -17,4 +17,15 @@ LetterList.prototype.programmes = function () {
 LetterList.prototype.page = function () {
   return this.list.atoz_programmes.page;
 };
+
+LetterList.prototype.programmesList = function () {
+    var urls = [];
+    for (var i = 0; i < this.programmes().length; i++) {
+      urls.push({
+        title: this.programmes()[i].title,
+        image: this.programmes()[i].images.standard.replace (/{recipe}/, "560x315")
+      });
+    };
+    return urls;
+};
 module.exports = LetterList;
