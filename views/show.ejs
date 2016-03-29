@@ -14,3 +14,11 @@
   <% var url = `/letter=${character}/page=${page + 1 }` %>
   <a href="<%= url %>">Next</a>
 <% } %>
+<section class="programmes">
+  <% for (var i = 0; i < letter.programmesList().length; i++) { %>
+    <div class="programme">
+      <h3><%= letter.programmesList()[i].title %></h3>
+      <img src="<%=letter.programmesList()[i].image  %>"/>
+    </div>
+  <% } %>
+</section>
