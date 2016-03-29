@@ -15,4 +15,10 @@ describe("Model LetterList", () => {
     done();
   });
 
+  it("should have a method to know character", (done) => {
+      letter.should.have.property('character');
+      letter.character.should.be.a('function');
+      done();
+  });
+
 }); // end of describe LetterList
