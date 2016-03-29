@@ -1,0 +1,31 @@
+<% var page = letter.page() %>
+<% var character = letter.character()  %>
+<% var nextPage = letter.nextPage() %>
+<% var beforePage = letter.beforePage()%>
+
+<section class="page-information">
+  <span>Letter <strong><%= character.toUpperCase() %></strong></span>
+  <span>Page <strong><%= page %></strong></span>
+</section>
+
+<section class="page-navigation">
+  <% if (beforePage) { %>
+    <% var url = `/letter=${character}/page=${page - 1 }` %>
+    <a href="<%= url %>">Before</a>
+  <% } %>
+
+  <% if (nextPage) { %>
+    <% var url = `/letter=${character}/page=${page + 1 }` %>
+    <a href="<%= url %>">Next</a>
+    <% } %>
+</section>
+
+
+<section class="programmes">
+  <% for (var i = 0; i < letter.programmesList().length; i++) { %>
+    <div class="programme">
+      <h3><%= letter.programmesList()[i].title %></h3>
+      <img src="<%=letter.programmesList()[i].image  %>"/>
+    </div>
+  <% } %>
+</section>
