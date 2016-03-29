@@ -27,4 +27,10 @@ describe("Model LetterList", () => {
     done();
 });
 
+  it("should have a method to get page value", (done) => {
+      letter.should.have.property('page');
+      letter.page.should.be.a('function');
+      done();
+  });
+
 }); // end of describe LetterList
