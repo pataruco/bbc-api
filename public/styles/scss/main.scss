@@ -26,7 +26,6 @@ html, body {
   color: $font-color;
 }
 
-
 // Desktop
 @media screen and (min-width: 768px) {
   header {
@@ -94,10 +93,21 @@ html, body {
     }
   }
 
+  .programmes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
 
-
-
-
+  .programme {
+    width: 24%;
+    margin: .4%;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 } //end of desktop
 
 //utils

@@ -65,7 +65,20 @@ html, body {
     color: white;
     background-color: #333333; }
     .page-navigation a:hover, .page-navigation a:focus {
-      color: #f54997; } }
+      color: #f54997; }
+
+  .programmes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end; }
+
+  .programme {
+    width: 24%;
+    margin: .4%; }
+    .programme img {
+      width: 100%;
+      height: auto; } }
 .clearfix:before,
 .clearfix:after {
   content: " ";
