@@ -1,8 +1,8 @@
-#BBC iPlayer code test
+#BBC iPlayer Code test
 
 ##What is it?
 
-The BBC iPlayer code test is a Node/Express app that uses the BBC API to:
+The BBC iPlayer Code test is a Node/Express app that uses the BBC API to:
 
 * List programme titles and images
 * Paginate through alphabet letters and numbers when there are more than 20 results
@@ -36,11 +36,11 @@ Open a browser tab and go to
 
 To run tests you need to have the server running on `localhost:3000`
 
-In your terminal, open a tab and run
+If it is not running, got to your terminal, open a tab, get into `bbc-api` directory and run
 
 `npm start`
 
-Open another tab in your terminal and run
+Open another tab in your terminal, get into `bbc-api` directory and run
 
 `npm test`
 
