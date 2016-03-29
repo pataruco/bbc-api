@@ -1,5 +1,6 @@
 var should        = require("chai").should(),
     expect        = require("chai").expect,
+    assert        = require("chai").assert,
     supertest     = require("supertest"),
     api           = supertest("https://ibl.api.bbci.co.uk");
 
@@ -77,4 +78,17 @@ describe('Request to BBC API', () => {
         done();
       })
     });
+
+    it("should have an array less than 20 programm elemments", (done) => {
+      api
+      .get(letterNumberPageOne)
+      .set("Accept", "application/json")
+      .end(function(err, res){
+        var elements = res.body.atoz_programmes.elements
+        expect(elements).to.be.an('array');
+        assert.isBelow(elements.length, 20, 'is strictly less than 20');
+        done();
+      })
+    });
+  });
 }); //end of BBC API
