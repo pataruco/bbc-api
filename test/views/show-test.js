@@ -150,5 +150,43 @@ describe("View", () => {
         done();
       })
     });
+
+    it("should have navigtation menu with the alphabet", function (done) {
+      api
+      .get(letterAPageFour)
+      .set("Accept", "application/json")
+      .expect(200)
+      .expect('Content-Type', /html/)
+      .end(function(err, res) {
+        should.not.exist(err);
+        res.text.should.match(/letter=a/);
+        res.text.should.match(/letter=b/);
+        res.text.should.match(/letter=c/);
+        res.text.should.match(/letter=d/);
+        res.text.should.match(/letter=f/);
+        res.text.should.match(/letter=g/);
+        res.text.should.match(/letter=h/);
+        res.text.should.match(/letter=i/);
+        res.text.should.match(/letter=j/);
+        res.text.should.match(/letter=k/);
+        res.text.should.match(/letter=l/);
+        res.text.should.match(/letter=m/);
+        res.text.should.match(/letter=n/);
+        res.text.should.match(/letter=o/);
+        res.text.should.match(/letter=p/);
+        res.text.should.match(/letter=q/);
+        res.text.should.match(/letter=r/);
+        res.text.should.match(/letter=s/);
+        res.text.should.match(/letter=t/);
+        res.text.should.match(/letter=u/);
+        res.text.should.match(/letter=v/);
+        res.text.should.match(/letter=w/);
+        res.text.should.match(/letter=x/);
+        res.text.should.match(/letter=y/);
+        res.text.should.match(/letter=z/);
+        res.text.should.match(/letter=0-9/);
+        done();
+      });
+    });
   });
 }); // end of View
