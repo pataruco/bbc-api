@@ -8,7 +8,7 @@ var should              = require("chai").should(),
 describe("Model LetterList", () => {
   var letter = new LetterList();
 
-  it("should be declare", (done) => {
+  it("should be declared", (done) => {
     expect(LetterList).to.be.a('function');
     done();
   });
@@ -42,13 +42,13 @@ describe("Model LetterList", () => {
     done();
   });
 
-  it("should have a method to know id a 'Next Page' is need it", (done) => {
+  it("should have a method to know if a 'Next Page' is need it", (done) => {
     letter.should.have.property('nextPage');
     letter.nextPage.should.be.a('function');
     done();
   });
 
-  it("should have a method to know id a 'Before Page' is need it", (done) => {
+  it("should have a method to know if a 'Before Page' is need it", (done) => {
     letter.should.have.property('beforePage');
     letter.beforePage.should.be.a('function');
     done();
