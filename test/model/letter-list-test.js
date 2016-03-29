@@ -106,6 +106,16 @@ describe("Model LetterList", () => {
      done();
    });
 
+   it("should know if a next page is need it", (done) => {
+     var letter1 = new LetterList();
+     letter1.init(letterAPageOneData);
+     var letter2 = new LetterList();
+     letter2.init(letterAPageFourData);
+     expect(letter1.nextPage()).to.equal(true);
+     expect(letter2.nextPage()).to.equal(false);
+     done();
+   });
+   
 
  });// end of BBC API response
 }); // end of describe LetterList
