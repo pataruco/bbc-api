@@ -13,4 +13,8 @@ LetterList.prototype.character = function () {
 LetterList.prototype.programmes = function () {
   return this.list.atoz_programmes.elements;
 };
+
+LetterList.prototype.page = function () {
+  return this.list.atoz_programmes.page;
+};
 module.exports = LetterList;
