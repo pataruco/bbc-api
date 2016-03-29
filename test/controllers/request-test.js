@@ -32,4 +32,14 @@ describe('Request to BBC API', () => {
         done();
       });
   });
+
+  it("should return an object that have a field called page", (done) => {
+    api
+      .get(letterAPageOne)
+      .set("Accept", "application/json")
+      .end(function(err, res){
+        expect(res.body.atoz_programmes).to.have.property('page');
+        done();
+      });
+  });
 }); //end of BBC API
