@@ -28,7 +28,7 @@ html, body {
 
 header {
   width: 90%;
-  margin: 0 auto;
+  margin: 5% auto;
 }
 nav {
   h1 {
@@ -74,7 +74,6 @@ main {
 }
 
 .page-information {
-  text-align: right;
   font-size: 1.5rem;
   color: $font-color-secondary;
   font-weight: 200;
@@ -89,7 +88,6 @@ main {
 }
 
 .page-navigation {
-  text-align: right;
   span {
     border: .2rem solid transparent;
     &:last-child{
@@ -97,9 +95,8 @@ main {
     }
   }
   a {
-    width: 10%;
-    height: auto;
-    padding: .5rem;
+    padding: 1rem;
+    min-width: 14%;
     text-align: center;
     display: inline-block;
     color:$font-color-primary;
