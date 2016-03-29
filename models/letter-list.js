@@ -33,4 +33,8 @@ LetterList.prototype.nextPage = function () {
   return this.programmes().length === 20;
 };
 
+LetterList.prototype.beforePage = function () {
+  return this.page() !== 1;
+};
+
 module.exports = LetterList;
