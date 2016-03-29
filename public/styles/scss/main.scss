@@ -28,7 +28,7 @@ html, body {
 
 header {
   width: 90%;
-  margin: 0 auto;
+  margin: 5% auto;
 }
 nav {
   h1 {
@@ -74,7 +74,7 @@ main {
 }
 
 .page-information {
-  text-align: right;
+  // text-align: right;
   font-size: 1.5rem;
   color: $font-color-secondary;
   font-weight: 200;
@@ -89,7 +89,7 @@ main {
 }
 
 .page-navigation {
-  text-align: right;
+  // text-align: right;
   span {
     border: .2rem solid transparent;
     &:last-child{
