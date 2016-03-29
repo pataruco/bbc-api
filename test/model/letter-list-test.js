@@ -1,5 +1,6 @@
 var should              = require("chai").should(),
     expect              = require("chai").expect,
+    assert              = require("chai").assert,
     letterAPageOneData  = require('./letter-a-page-1-data-helper.js'),
     letterAPageFourData = require('./letter-a-page-4-data-helper.js'),
     LetterList          = require('../../models/letter-list.js');
@@ -65,12 +66,28 @@ describe("Model LetterList", () => {
      expect(letter.page()).to.equal(1);
      done();
    });
-   
+
    it("should get a programme elements", (done) => {
      letter.init(letterAPageOneData);
      expect(letter.programmes()).to.be.an('array');
      done();
    });
+
+   it("should get a programme elements array length of 20 when Letter A page 1", (done) => {
+     letter.init(letterAPageOneData);
+     expect(letter.programmes()).to.be.an('array');
+     letter.programmes().length.should.be.equal(20)
+     done();
+   });
+
+   it("should get a programme elements array length of 20 when Letter A page 4", (done) => {
+     letter.init(letterAPageFourData);
+     expect(letter.programmes()).to.be.an('array');
+     assert.isBelow(letter.programmes().length, 20, 'is strictly less than 20');
+     done();
+   });
+
+
 
  });// end of BBC API response
 }); // end of describe LetterList
