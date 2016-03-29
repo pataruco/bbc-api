@@ -28,15 +28,15 @@ describe("Model LetterList", () => {
     letter.should.have.property('programmes');
     letter.programmes.should.be.a('function');
     done();
-});
-
-  it("should have a method to get page value", (done) => {
-      letter.should.have.property('page');
-      letter.page.should.be.a('function');
-      done();
   });
 
-  it("should have a method to create an array of objects with titles and images url's", (done) => {
+  it("should have a method to get page value", (done) => {
+    letter.should.have.property('page');
+    letter.page.should.be.a('function');
+    done();
+  });
+
+  it("should have a method to create an array of objects with titles and images", (done) => {
     letter.should.have.property('programmesList');
     letter.programmesList.should.be.a('function');
     done();
@@ -80,7 +80,7 @@ describe("Model LetterList", () => {
      done();
    });
 
-   it("should get a programme elements array length less of  20 when Letter A page 4", (done) => {
+   it("should get a programme elements array length < 20 when Letter A page 4", (done) => {
      letter.init(letterAPageFourData);
      expect(letter.programmes()).to.be.an('array');
      assert.isBelow(letter.programmes().length, 20, 'is strictly less than 20');
@@ -115,7 +115,7 @@ describe("Model LetterList", () => {
      expect(letter2.nextPage()).to.equal(false);
      done();
    });
-   
+
    it("should know if a before page is need it", (done) => {
      var letter1 = new LetterList();
      letter1.init(letterAPageOneData);
@@ -125,6 +125,5 @@ describe("Model LetterList", () => {
      expect(letter2.beforePage()).to.equal(true);
      done();
    });
-
  });// end of BBC API response
 }); // end of describe LetterList
