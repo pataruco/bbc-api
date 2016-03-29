@@ -28,4 +28,9 @@ LetterList.prototype.programmesList = function () {
     };
     return urls;
 };
+
+LetterList.prototype.nextPage = function () {
+  return this.programmes().length === 20;
+};
+
 module.exports = LetterList;
