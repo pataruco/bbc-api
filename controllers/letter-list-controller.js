@@ -21,7 +21,7 @@ router.get('/letter=:letter/page=:page', (req, res) => {
       var data = JSON.parse(body);
       letter.init(data);
       res.render('show', { letter } );
-    };
+    }
   });
 });
 

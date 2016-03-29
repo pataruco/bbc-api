@@ -1,36 +1,42 @@
-#BBC iPlayer Codetes
-## What it is?
-Is a Node/Express app which use the BBC API to:
+#BBC iPlayer code test
 
-* List programme titles and images.
-* Paginate through a letter when has more than 20 results.
-* Navigate to other letter.
+##What is it?
 
-## How to install
+The BBC iPlayer code test is a Node/Express app that uses the BBC API to:
 
-* Clone this repo
+* List programme titles and images
+* Paginate through alphabet letters and numbers when there are more than 20 results
+* Navigate to another letter
 
-	`git clone git@github.com:pataruco/bbc-api.git`
+##How to install
 
-* Get inside `bbc-api` directory in your machine
+Clone this repo
 
- 	`cd bbc-api`
-* Then install dependecies
+`git clone git@github.com:pataruco/bbc-api.git`
 
- 	`npm install`
+Go to `bbc-api` directory in your machine
 
-## How to run the program
-Once it is installed in your machine and inside the `bbc-api` run
+`cd bbc-api`
+
+Then install dependencies
+
+`npm install --save`
+
+##How to run the program
+
+Once it is installed in your machine and in the `bbc-api` directory, run
 
 `npm start`
 
 Open a browser tab and go to
 
 `localhost:3000`
-## How to run tests
+
+##How to run tests
+
 To run tests you need to have the server running on `localhost:3000`
 
-In your terminal open a tab and run
+In your terminal, open a tab and run
 
 `npm start`
 
@@ -38,17 +44,20 @@ Open another tab in your terminal and run
 
 `npm test`
 
-## Where I struggled
+##Where I struggled
+
 Writing test in Mocha/Chai
 
-## Fun Parts
-Building the `LetterList` model
+##Fun Parts
 
-## Libraries used
-* Node.
-* Express.
-* Sass.
+Building the LetterList model
+
+##Libraries used
+
+* Node
+* Express
+* Sass
 * Mocha
-* Chai.
-* Request.
-* EJS.
+* Chai
+* Request
+* EJS
