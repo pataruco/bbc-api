@@ -109,5 +109,18 @@ describe("View", () => {
       })
     });
 
+    it ("should render a before page link", (done)=>{
+      api
+      .get(letterAPageFour)
+      .set("Accept", "application/json")
+      .expect(200)
+      .expect('Content-Type', /html/)
+      .end(function(err, res) {
+        should.not.exist(err);
+        res.text.should.match(/Before/);
+        done();
+      });
+    });
+
   }); // end letter=a/page=4
 }); // end of View
