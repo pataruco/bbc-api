@@ -1,6 +1,6 @@
 #BBC iPlayer Codetes
 ## What it is?
-Is a Node/Express app which use the BBC API to: 
+Is a Node/Express app which use the BBC API to:
 
 * List programme titles and images.
 * Paginate through a letter when has more than 20 results.
@@ -8,15 +8,15 @@ Is a Node/Express app which use the BBC API to:
 
 ## How to install
 
-* Clone this repo 
+* Clone this repo
 
 	`git clone git@github.com:pataruco/bbc-api.git`
 
-* Get inside `bbc-api` directory in your machine 
- 
+* Get inside `bbc-api` directory in your machine
+
  	`cd bbc-api`
 * Then install dependecies
- 	
+
  	`npm install`
 
 ## How to run the program
