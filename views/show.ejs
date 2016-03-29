@@ -5,6 +5,11 @@
 <h1>Letter <%= character.toUpperCase() %></h1>
 <h2>Page <%= page %></h2>
 
+<% if (beforePage) { %>
+  <% var url = `/letter=${character}/page=${page - 1 }` %>
+  <a href="<%= url %>">Before</a>
+<% } %>
+
 <% if (nextPage) { %>
   <% var url = `/letter=${character}/page=${page + 1 }` %>
   <a href="<%= url %>">Next</a>
