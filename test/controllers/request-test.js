@@ -5,6 +5,7 @@ var should        = require("chai").should(),
 
 describe('Request to BBC API', () => {
   var letterAPageOne = '/ibl/v1/atoz/a/programmes?page=1'
+  var letterNumberPageOne = '/ibl/v1/atoz/0-9/programmes?page=1'
 
   it("should return a 200 response", (done) => {
     api
@@ -39,6 +40,28 @@ describe('Request to BBC API', () => {
       .set("Accept", "application/json")
       .end(function(err, res){
         expect(res.body.atoz_programmes).to.have.property('page');
+        done();
+      });
+  });
+
+  it("should return 'a' as character value when letter A is requested", (done) => {
+    api
+      .get(letterAPageOne)
+      .set("Accept", "application/json")
+      .end(function(err, res){
+        expect(res.body.atoz_programmes.character).to.equal('a');
+        expect(res.body.atoz_programmes.character).to.not.equal('b');
+        done();
+      });
+  });
+
+  it("should return '0-9' as character value when letter 0-9 is requested", (done) => {
+    api
+      .get(letterNumberPageOne)
+      .set("Accept", "application/json")
+      .end(function(err, res){
+        expect(res.body.atoz_programmes.character).to.equal('0-9');
+        expect(res.body.atoz_programmes.character).to.not.equal('a');
         done();
       });
   });
