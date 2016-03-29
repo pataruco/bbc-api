@@ -45,5 +45,11 @@ describe("Model LetterList", () => {
     done();
   });
 
+  it("should have a method to know id a 'Before Page' is need it", (done) => {
+    letter.should.have.property('beforePage');
+    letter.beforePage.should.be.a('function');
+    done();
+  });
+
 
 }); // end of describe LetterList
