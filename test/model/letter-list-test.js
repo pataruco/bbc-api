@@ -1,5 +1,6 @@
 var should              = require("chai").should(),
     expect              = require("chai").expect,
+    letterAPageOneData  = require('./letter-a-page-1-data-helper.js'),
     LetterList          = require('../../models/letter-list.js');
 
 describe("Model LetterList", () => {
