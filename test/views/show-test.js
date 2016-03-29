@@ -7,7 +7,7 @@ var should        = require("chai").should(),
 describe("View", () => {
 
   describe("letter=a/page=1", () =>{
-    var letterAPageOne = "/letter=a/page=1"
+    var letterAPageOne = "/letter=a/page=1";
 
     it ("should render a Letter A Page 1 page", (done)=>{
       api
@@ -61,7 +61,7 @@ describe("View", () => {
         should.not.exist(err);
         res.text.should.match(/Next/);
         done();
-      })
+      });
     });
 
     it ("should not render a before page link", (done)=>{
@@ -74,12 +74,12 @@ describe("View", () => {
         should.not.exist(err);
         res.text.should.not.match(/Previous/);
         done();
-      })
+      });
     });
   }); // end "letter=a/page=1"
 
   describe("/letter=a/page=4", () =>{
-    var letterAPageFour = "/letter=a/page=4"
+    var letterAPageFour = "/letter=a/page=4";
 
     it ("should render a Letter A Page 4 page", (done)=>{
       api
@@ -92,7 +92,7 @@ describe("View", () => {
         res.text.should.match(/Page <strong>4/);
         res.text.should.match(/Letter <strong>A/);
         done();
-      })
+      });
     });
 
     it ("should not render a next page link", (done)=>{
@@ -105,7 +105,7 @@ describe("View", () => {
         should.not.exist(err);
         res.text.should.not.match(/Next/);
         done();
-      })
+      });
     });
 
     it ("should render a before page link", (done)=>{
@@ -136,7 +136,7 @@ describe("View", () => {
   }); // end letter=a/page=4
 
   describe("Nav Menu", () => {
-  var letterAPageFour = "/letter=a/page=4"
+  var letterAPageFour = "/letter=a/page=4";
 
     it("should have a <nav> tag", function (done) {
       api
@@ -148,7 +148,7 @@ describe("View", () => {
         should.not.exist(err);
         res.text.should.match(/<nav>/);
         done();
-      })
+      });
     });
 
     it("should have navigtation menu with the alphabet", function (done) {

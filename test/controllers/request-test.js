@@ -4,9 +4,9 @@ var should        = require("chai").should(),
     supertest     = require("supertest"),
     api           = supertest("https://ibl.api.bbci.co.uk");
 
-describe('Request to BBC API', () => {
-  var letterAPageOne = '/ibl/v1/atoz/a/programmes?page=1'
-  var letterNumberPageOne = '/ibl/v1/atoz/0-9/programmes?page=1'
+describe("Request to BBC API", () => {
+  var letterAPageOne = '/ibl/v1/atoz/a/programmes?page=1';
+  var letterNumberPageOne = '/ibl/v1/atoz/0-9/programmes?page=1';
 
   it("should return a 200 response", (done) => {
     api
@@ -87,7 +87,7 @@ describe('Request to BBC API', () => {
       .end(function(err, res){
         expect(res.body.atoz_programmes.elements).to.be.an('array');
         expect(res.body.atoz_programmes.elements.length).to.equal(20);
-      })
+      });
       done();
     });
 
@@ -96,10 +96,10 @@ describe('Request to BBC API', () => {
       .get(letterNumberPageOne)
       .set("Accept", "application/json")
       .end(function(err, res){
-        var elements = res.body.atoz_programmes.elements
+        var elements = res.body.atoz_programmes.elements;
         expect(elements).to.be.an('array');
         assert.isBelow(elements.length, 20, 'is strictly less than 20');
-      })
+      });
       done();
     });
   });
@@ -113,7 +113,7 @@ describe('Request to BBC API', () => {
       .end(function(err, res){
         expect(res.body.atoz_programmes.elements[0]).to.have.property('title');
         done();
-      })
+      });
     });
 
     it("should title value starts with 'A' when letter 'a' is requested", (done) => {
@@ -124,7 +124,7 @@ describe('Request to BBC API', () => {
         expect(res.body.atoz_programmes.elements[0]).to.have.property('title');
         expect(res.body.atoz_programmes.elements[0].title[0]).to.equal('A');
         done();
-      })
+      });
     });
 
     it("should have a field for images", (done) => {
@@ -134,7 +134,7 @@ describe('Request to BBC API', () => {
       .end(function(err, res){
         expect(res.body.atoz_programmes.elements[0]).to.have.property('images');
         done();
-      })
+      });
     });
 
     it("should image value have a {recipe} string ", (done) => {

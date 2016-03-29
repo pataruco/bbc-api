@@ -10,12 +10,12 @@ describe("Controller", () => {
       api
       .get("/")
       .set("Accept", "application/json")
-      .expect(302, done)
+      .expect(302, done);
     });
   });
 
   describe("GET //letter=a/page=1", () =>{
-  var letterAPageOne = "/letter=a/page=1"
+  var letterAPageOne = "/letter=a/page=1";
 
     it ("should return a 200 response", (done)=>{
       api

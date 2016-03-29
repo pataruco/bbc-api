@@ -25,7 +25,7 @@ LetterList.prototype.programmesList = function () {
         title: this.programmes()[i].title,
         image: this.programmes()[i].images.standard.replace (/{recipe}/, "560x315")
       });
-    };
+    }
     return urls;
 };
 

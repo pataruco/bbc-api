@@ -76,7 +76,7 @@ describe("Model LetterList", () => {
    it("should get a programme elements array length of 20 when Letter A page 1", (done) => {
      letter.init(letterAPageOneData);
      expect(letter.programmes()).to.be.an('array');
-     letter.programmes().length.should.be.equal(20)
+     letter.programmes().length.should.be.equal(20);
      done();
    });
 
