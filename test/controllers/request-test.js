@@ -124,5 +124,14 @@ describe('Request to BBC API', () => {
         done();
       })
     });
+    it("should have a field for images", (done) => {
+      api
+      .get(letterAPageOne)
+      .set("Accept", "application/json")
+      .end(function(err, res){
+        expect(res.body.atoz_programmes.elements[0]).to.have.property('images');
+        done();
+      })
+    });
   });
 }); //end of BBC API
