@@ -12,7 +12,8 @@ describe('Request to BBC API', () => {
     api
       .get(letterAPageOne)
       .set("Accept", "application/json")
-      .expect(200, done);
+      .expect(200);
+      done();
   });
 
   it("should return an object", (done) => {
@@ -75,8 +76,8 @@ describe('Request to BBC API', () => {
       .end(function(err, res){
         expect(res.body.atoz_programmes.elements).to.be.an('array');
         expect(res.body.atoz_programmes.elements.length).to.equal(20);
-        done();
       })
+      done();
     });
 
     it("should have an array less than 20 programm elemments", (done) => {
@@ -87,6 +88,10 @@ describe('Request to BBC API', () => {
         var elements = res.body.atoz_programmes.elements
         expect(elements).to.be.an('array');
         assert.isBelow(elements.length, 20, 'is strictly less than 20');
+      })
+      done();
+    });
+  });
         done();
       })
     });
