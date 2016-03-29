@@ -15,10 +15,16 @@ describe("Model LetterList", () => {
     done();
   });
 
-  it("should have a method to know character", (done) => {
+  it("should have a method to get character value", (done) => {
       letter.should.have.property('character');
       letter.character.should.be.a('function');
       done();
   });
+
+  it("should have a method to get programme elements", (done) => {
+    letter.should.have.property('programmes');
+    letter.programmes.should.be.a('function');
+    done();
+});
 
 }); // end of describe LetterList
