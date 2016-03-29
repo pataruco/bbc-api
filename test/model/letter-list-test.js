@@ -33,4 +33,10 @@ describe("Model LetterList", () => {
       done();
   });
 
+  it("should have a method to create an array of objects with titles and images url's", (done) => {
+    letter.should.have.property('programmesList');
+    letter.programmesList.should.be.a('function');
+    done();
+  });
+
 }); // end of describe LetterList
