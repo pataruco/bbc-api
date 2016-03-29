@@ -10,7 +10,6 @@ describe('Request to BBC API', () => {
     api
       .get(letterAPageOne)
       .set("Accept", "application/json")
-      .expect(200)
-      done();
+      .expect(200, done);
   });
 }); //end of BBC API
