@@ -4,3 +4,8 @@
 <% var beforePage = letter.beforePage()%>
 <h1>Letter <%= character.toUpperCase() %></h1>
 <h2>Page <%= page %></h2>
+
+<% if (nextPage) { %>
+  <% var url = `/letter=${character}/page=${page + 1 }` %>
+  <a href="<%= url %>">Next</a>
+<% } %>
