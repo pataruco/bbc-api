@@ -1,8 +1,8 @@
-#BBC iPlayer Code test
+#BBC iPlayer programmes index
 
 ##What is it?
 
-The BBC iPlayer Code test is a Node/Express app that uses the BBC API to:
+Is a Node/Express app that uses the BBC API to:
 
 * List programme titles and images
 * Paginate through alphabet letters and numbers when there are more than 20 results
